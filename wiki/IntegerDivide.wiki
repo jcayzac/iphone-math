@@ -1,4 +1,4 @@
-#Why is there no integer divide routine in the library?
+#summary Why is there no integer divide routine in the library?
 
 = Why is there no integer divide routine in the library? =
 Because GCC already generates optimal assembly code for dividing by an integer constant.
