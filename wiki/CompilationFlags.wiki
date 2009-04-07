@@ -1,0 +1,6 @@
+#Which flags should I use?
+
+= iPhone =
+
+I use the following:
+`-O3 -fomit-frame-pointer -fstrict-aliasing -marm -march=armv6 -mcpu=arm1176jzf-s -mfloat-abi=softfp -mfpu=vfp`
