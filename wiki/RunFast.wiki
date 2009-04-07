@@ -1,5 +1,3 @@
-#How can I enable RunFast mode?
-
 VFP11 works in IEEE-754 full compliance mode, unless RunFast mode is enabled.
 RunFast is enabled by default by iPhoneOS, QNX, and possibly other operating systems.
 
