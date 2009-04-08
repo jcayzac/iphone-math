@@ -14,14 +14,12 @@
 static inline float arccos_radians(float x) {
 	union { float f; unsigned int b; } z;
 	z.f=x;
-	bool cond1 = (z.b&0x80000000); // negative?
-	z.b&=0x7fffffff; // fabsf
-	float s=sqrtf(z.f); // pipeline
+	bool x_is_negative = (z.b&0x80000000);
+	z.b&=0x7fffffff;
+	float s=sqrtf(z.f);
 	float u=1.57079632679489661923f-1.05199081698724154807f*z.f;
-	bool cond2 = (z.b<0x3f400000); // <0.75?
-	
-	u=cond2?u:2.f*sqrtf(1.f-s);
-	return cond1?3.14159265358979323846f-u:u;
+	u=(z.b<0x3f400000)?u:2.f*sqrtf(1.f-s);
+	return x_is_negative?3.14159265358979323846f-u:u;
 }
 
 static inline float arccos_degrees(float x) {
