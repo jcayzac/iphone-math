@@ -11,6 +11,17 @@
 // 
 // Maximum error: 0.06 radians
 // Average error: 0.01 radians
+//
+// This is how I compute arccos(x):
+// 	float u;
+// 	if (abs(x)<0.75) {
+// 		u=(pi/2 - 1.05199081698724154807*abs(x));
+// 	}
+// 	else {
+// 		u=2*sqrt(1-sqrt(abs(x)));
+// 	}
+// 	if (x<0) return (pi-u);
+// 	else return u;
 static inline float arccos_radians(float x) {
 	union { float f; unsigned int b; } z;
 	z.f=x;
